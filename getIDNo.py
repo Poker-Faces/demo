@@ -1,4 +1,5 @@
 # coding:utf-8
+from imp import reload
 
 import urllib2
 import sys
@@ -61,9 +62,9 @@ while True:
 try:
     val = 'province=' + province[provinceNo] + '&city=' + city[cityNo] + '&area=' + area[areaNo] + '&year=' + year[yearNo] + '&month=' + month[monthNo] + '&day=' + day[dayNo] + '&sex=' + sex[sexNo]
 except ():
-    print "输入错误"
+    print("输入错误")
 url1 = 'http://www.welefen.com/lab/identify?%s' % val
-print '第三方网址：' +  url1
+print('第三方网址：' + url1)
 
 
 # 读取网页内容
@@ -104,9 +105,9 @@ try:
     degree = 5*int(match)
     areas = '以下是' + str(degree) + '个地址：' + province[provinceNo] + ' ' + city[cityNo] + ' ' + area[areaNo]
     date = ' 出生日期：' + year[yearNo] + '年' + month[monthNo] + '月' + day[dayNo] + '日 性别' + sex[sexNo] + '的身份证号码'
-    print areas + date
+    print(areas + date)
     for i in range(0, int(match)):
         soup = getPage(url1)
-        print re.sub(r' 22x', ' IDNo:', convertContent(getContent(soup)))
+        print(re.sub(r' 22x', ' IDNo:', convertContent(getContent(soup))))
 except():
-    print '发生了错误'
+    print('发生了错误')
