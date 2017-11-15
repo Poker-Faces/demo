@@ -8,7 +8,7 @@ from city import city
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-cityName = raw_input('您想查看那个城市的天气？\n')
+cityName = input('您想查看那个城市的天气？\n')
 cityCode = city.get(cityName)
 if cityCode:
     try:
