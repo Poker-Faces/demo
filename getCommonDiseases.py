@@ -29,6 +29,7 @@
 """
 import re
 import time
+from imp import reload
 
 from bs4 import BeautifulSoup
 import urllib2
@@ -92,6 +93,6 @@ for i in range(begin, over):  # 1330
             # print '<------------------------------------'
     else:
         time.sleep(1.5)
-        print '------------------------------------------------------------------------>>>>>>>>>>>>'
-        print time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + ':第 %d 条执行失败' % i
-        print '<<<<<<<<<<<<------------------------------------------------------------------------'
+        print('------------------------------------------------------------------------>>>>>>>>>>>>')
+        print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + ':第 %d 条执行失败' % i)
+        print('<<<<<<<<<<<<------------------------------------------------------------------------')
