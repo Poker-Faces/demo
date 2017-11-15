@@ -1,4 +1,5 @@
 # coding:utf-8
+from imp import reload
 
 import urllib2
 import sys
@@ -51,20 +52,20 @@ def convertContent(txt):
 # f.write('# coding:utf-8\nprovince = {\n'+CommonDiseases + '"\n}')
 # f.close()
 
-provinceName = raw_input('你想看哪个省市\n')
+provinceName = input('你想看哪个省市\n')
 path1 = province.get(provinceName)
 url2 = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/%s.html" % path1
 path2 = getPage(url2).a.get('href')
-print path2 + 'path2-----------------------------------------'
+print(path2 + 'path2-----------------------------------------')
 url3 = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/%s" % path2
 path3 = getPage(url3).a.get('href')
-print path3 + 'path3-----------------------------------------'
+print(path3 + 'path3-----------------------------------------')
 url4 = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/%s" % (path1+"/"+path3)
 path4 = getPage(url4).a.get('href')
-print path4 + 'path4-----------------------------------------'
+print(path4 + 'path4-----------------------------------------')
 url5 = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/%s" % (path1+"/01/"+path4)
 path5 = getPage(url5).tr
-print path5 + 'path5-----------------------------------------'
+print(path5 + 'path5-----------------------------------------')
 
 
 # http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/11/01/01/110101001.html

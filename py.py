@@ -25,7 +25,7 @@ import urllib
 url = 'http://www.freebuf.com/articles'
 globalcontent = urllib.urlopen(url).read()
 news_start = globalcontent
-print news_start
+print(news_start)
 count = 1
 while count <= 2:
     # noinspection PyBroadException
@@ -33,14 +33,14 @@ while count <= 2:
         news_inner_head = news_start.find('<dt>\n<a href=')
         news_inner_tail = news_start.find('.html')
         news_inner_url = news_start[news_inner_head + 13:news_inner_tail + 5]
-        print news_inner_url
+        print(news_inner_url)
         news_start = news_start[news_inner_tail + 5:]
 
         filename = news_inner_url[-10:]
         urllib.urlretrieve(news_inner_url, filename)
         count += 1
     except:
-        print 'Download Failed!'
+        print('Download Failed!')
         break
     finally:
         if count == 2:

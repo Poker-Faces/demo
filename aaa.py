@@ -3,13 +3,13 @@ from bs4 import BeautifulSoup
 import urllib2
 from province import province
 
-provinceName = raw_input('你想看哪个省市\n')
+provinceName = input('你想看哪个省市\n')
 cityCode = province.get(provinceName)
 
-print cityCode
+print(cityCode)
 
 url1 = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/%s.html" % cityCode
-print url1
+print(url1)
 
 
 # 读取网页内容
@@ -24,4 +24,6 @@ def getPage(url, code='gb2312', driver_='Chrome'):
     s = response.read().lower().decode(code)
     soup = BeautifulSoup(s, "html.parser")
     return soup
-print getPage(url1)
+
+
+print(getPage(url1))
